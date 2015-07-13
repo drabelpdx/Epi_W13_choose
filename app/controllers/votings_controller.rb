@@ -9,6 +9,7 @@ class VotingsController < ApplicationController
     @vote = Voting.new(voting_params)
     if @vote.save
       # current_user.questions << @vote
+      @question.votings << @vote
       flash[:notification] = "Voted successfully"
       redirect_to questions_path
     else

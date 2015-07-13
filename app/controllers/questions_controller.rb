@@ -22,6 +22,7 @@ end
   def show
     @questions = Question.all
     @question = Question.find(params[:id])
+    @votes_a = @question.show_votes_a
   end
 
 def upvote
