@@ -12,6 +12,7 @@ gem 'sass-rails', '>= 3.2'
 gem 'devise'
 gem 'paperclip', :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'simple_form'
+gem 'make_voteable'
 
 group :development do
   gem 'byebug'

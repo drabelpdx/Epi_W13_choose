@@ -1,10 +1,6 @@
-<h2>Questions<h2>
+<h2>Questions</h2>
 
-<% if @questions.any? %>
-  <% @questions.each do |question| %>
-    <h4>Would you rather...</h4>
-    <p><%= question.option_a %> OR <%= question.option_b %></p>
-  <% end %>
-<% else %>
-  <p>There are no questions posted yet.</p>
-<% end %>
+
+
+
+<%= render @questions %>

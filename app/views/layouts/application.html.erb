@@ -15,7 +15,8 @@
           <li><%= link_to "Add a Question", new_question_path %></li>
         </ul>
       </nav>
-
+    <%= flash[:notification] %>
+    <%= flash[:alert] %>
     <%= yield %>
     </div>
   </body>

@@ -1,0 +1,11 @@
+
+<%= form_for @question do |f| %>
+  <div class="field">
+    <%= link_to "Vote", question_votings_path(question, voting: { up_vote: true, voteable_id: question.id}), method: :post, class: "btn btn-success" %>
+    <%= f.label :option_a, question.option_a %>
+  <div class="field">
+    <%= link_to "Vote", question, method: :downvote, class: "btn btn-success" %>
+    <%= f.label :option_b, question.option_b %>
+  </div>
+  <hr>
+<% end %>

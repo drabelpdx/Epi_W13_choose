@@ -5,4 +5,5 @@ class Question < ActiveRecord::Base
   validates_presence_of :option_a
   validates_presence_of :option_b
 
+  has_many :votings, as: :voteable
 end

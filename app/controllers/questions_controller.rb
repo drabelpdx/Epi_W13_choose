@@ -19,6 +19,31 @@ class QuestionsController < ApplicationController
     end
 end
 
+  def show
+    @questions = Question.all
+    @question = Question.find(params[:id])
+  end
+
+def upvote
+  @question = Question.find params[:id]
+  current_user.upvote(@question)
+  flash[:message] = 'Thanks for voting!'
+  redirect_to questions_path()
+rescue MakeVoteable::Exceptions::AlreadyVotedError
+  flash[:error] = 'Already voted!'
+  redirect_to questions_path()
+end
+
+def downvote
+  @question = Question.find params[:id]
+  current_user.downvote(@question)
+  flash[:message] = 'Thanks for voting!'
+  redirect_to question_path(@question)
+rescue MakeVoteable::Exceptions::AlreadyVotedError
+  flash[:error] = 'Already voted!'
+  redirect_to question_path(@question)
+end
+
   private
 
   def question_params
